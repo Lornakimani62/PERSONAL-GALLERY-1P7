@@ -54,7 +54,6 @@ class CategoryTestClass(TestCase):
     def test_update(self):
         category = Category.get_category_id(self.cat.id)
         category.update_category('Travel')
-        category = Category.get_category_id(self.cat.id)
         self.assertTrue(category.name == 'Travel')
 
 
@@ -68,7 +67,7 @@ class ImageTestClass(TestCase):
         self.loc = Location(name="Africa")
         self.loc.save_location()
 
-        self.image = Image(name='image test', description='my test',image_location=self.loc, image_category=self.cat)
+        self.image = Image(name='image test', Description='my test',location=self.loc,category=self.cat)
         self.image.save_image()
 
     def test_instance(self):
@@ -94,14 +93,6 @@ class ImageTestClass(TestCase):
         images= Image.get_image_by_id(self.image.id)
         self.assertTrue(len(images) == 1)
 
-    def test_search_by_category(self):
-        images = Image.search_by_category('fashion')
-        self.assertTrue(len(images)>0)
-
-    def test_filter_by_location(self):
-        images = Image.fil0ter_by_location('1')
-        print(images)
-        self.assertTrue(len(images)>0)
 
     def test_update_image(self):
         self.image.save_image()

@@ -10,8 +10,14 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
-    def update_category(self):
-        self.update()
+    def update_location(self,update):
+        self.name = update
+        self.save()
+
+    @classmethod
+    def get_location_id(cls, id):
+        location = Location.objects.get(pk = id)
+        return location
 
     def __str__(self):
         return self.name
@@ -25,8 +31,14 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
-    def update_category(self):
-        self.update()
+    def update_category(self, update):
+        self.name = update
+        self.save()
+
+    @classmethod
+    def get_category_id(cls, id):
+        category = Category.objects.get(pk = id)
+        return category
 
 
     def __str__(self):
@@ -50,8 +62,12 @@ class Image(models.Model):
         self.save()
 
     @classmethod
-    def get_images(cls):
+    def get_all_images(cls):
         images = cls.objects.all()
+        return images
+    @classmethod
+    def get_image_by_id(self):
+        images= Image.get_image_by_id(self.image.id)
         return images
 
     def __str__(self):
