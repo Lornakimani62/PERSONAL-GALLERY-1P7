@@ -48,7 +48,7 @@ class Image(models.Model):
     name = models.CharField(max_length=30)
     Description = models.TextField()
     location = models.ForeignKey('Location')
-    category = models.ManyToManyField('Category')
+    category = models.ForeignKey('Category')
 
 
     def save_image(self):
@@ -57,14 +57,16 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-    def update_image(self, update):
-        self.name = update
-        self.save()
+    @classmethod
+    def update_image(cls, id ,name, Description , location,category):
+        update = cls.objects.filter(id = id).update(name = name, Description = Description ,location = location,category = category)
+        # return update
 
     @classmethod
     def get_all_images(cls):
         images = cls.objects.all()
         return images
+
     @classmethod
     def get_image_by_id(self):
         images= Image.get_image_by_id(self.image.id)

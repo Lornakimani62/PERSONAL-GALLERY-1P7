@@ -96,7 +96,10 @@ class ImageTestClass(TestCase):
 
     def test_update_image(self):
         self.image.save_image()
-        image = Image.update_image( self.image.id, 'test update', 'my test',self.loc, self.cat)
+        image = Image.update_image( self.image.id, 'update', 'my test',self.loc, self.cat)
         upimage = Image.objects.filter(id = self.image.id)
         print(upimage)
-        self.assertTrue(Image.name == 'test update')
+        self.assertTrue(Image.name == 'update')
+
+
+
