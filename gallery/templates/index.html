@@ -18,7 +18,21 @@
 <body>
     {% block content %}
         {% include "navbar.html" %}
-        
+        {% for image in images %}
+                <!-- display images -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 d-flex mb-3">
+                    <div class="card border-dark flex-fill">
+                        <div class="card-header">
+                            <img src="{{image.pic.url}}" alt="image">
+                            </div>
+                            <div class="card-body">
+                            <h5 class=>{{image.name}}</h5>
+                            <p>{{image.Description}}</p>
+                            <a href="{% url 'image' %}">View Details</a>
+                            </div>
+                            </div>
+                        </div>
+            {% endfor %}
     {%endblock%}
 
     {% block scripts %}

@@ -5,9 +5,9 @@ from .models import Location,Category,Image
 def home(request):
     images = Image.get_all_images()
     title = 'Gallery Home'
-    return render(request,'index.html',{'title':title, 'images':image})
+    return render(request,'index.html',{'title':title, 'images':images})
 
-def article(request,image_id):
+def image(request,image_id):
 
     try:
         image = Image.objects.get(id = image_id)
