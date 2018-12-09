@@ -72,6 +72,11 @@ class Image(models.Model):
         images= Image.get_image_by_id(self.image.id)
         return images
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        images = cls.objects.filter(title__icontains=search_term)
+        return images
+
     def __str__(self):
         return self.name
 
