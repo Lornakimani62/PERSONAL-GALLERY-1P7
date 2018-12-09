@@ -49,6 +49,7 @@ class Image(models.Model):
     Description = models.TextField()
     location = models.ForeignKey('Location')
     category = models.ForeignKey('Category')
+    pic = models.ImageField(upload_to = 'photos/')
 
 
     def save_image(self):
