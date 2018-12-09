@@ -7,7 +7,7 @@ def home(request):
     title = 'Gallery Home'
     return render(request,'index.html',{'title':title, 'images':image})
 
-def image(request):
+def article(request,image_id):
 
     try:
         image = Image.objects.get(id = image_id)
