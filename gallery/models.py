@@ -70,8 +70,8 @@ class Image(models.Model):
         print(images)
 
     @classmethod
-    def get_image_by_id(self,):
-        images= Image.objects.filter(id = id)
+    def get_image_by_id(self,image):
+        images= Image.objects.get(id = id)
         return images
 
     @classmethod
