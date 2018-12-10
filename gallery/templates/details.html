@@ -21,31 +21,22 @@
 
 
         <div class="container black white-text">
+                <div class="container">
 
-
-                <div class="row">
-                        <h2 class="text-center col-xs-12">{{image.name}}</h2>
-                </div>
-
-                <div class="row">
-                    <img src="{{image.pic.url}}"  class="img-responsive col-xs-12" alt="">
-                </div>
-
-                <br>
-
-                <div class="row">
-
-                        <h2>Image Details</h2>
-                        <br>
-                        <img src="{{Image.pic}}" style="width:500px;height:700px;">
-
-                        <h4>Caption: {{Image.Description}}</h4><hr>
-
-                        <h4>Location: {{Image.location}}</h4><br>
-
-                        <br><br><br>
+                        <div class="row">
+                        <h1>Image:</h1>
+                        <img src="{{Image.pic.url}}"  class="img-responsive" alt="">
+                        </div>
+                        <div class="row">
+                        <h1>Name: </h1>
+                        <p>{{image.name}}</p>
+                        </div>
+                    <div class="row">
+                        <h1>Description:</h1>
+                        <p>{{image.Description}}</p>
                         <h4>Link to this Image:<span><input id="myInput" type="text" value="https://photo-gallery-wesh.herokuapp.com/image/{{image.id}}"><a href="#" class="btn" onclick="myFunction()">copy</a></span></h4>
-
+                    </div>
+                    </div>
                 </div>
 
 

@@ -70,13 +70,13 @@ class Image(models.Model):
         print(images)
 
     @classmethod
-    def get_image_by_id(self):
-        images= Image.get_image_by_id(self.image.id)
+    def get_image_by_id(self,):
+        images= Image.objects.filter(id = id)
         return images
 
     @classmethod
-    def search_by_title(cls,search_term):
-        images = cls.objects.filter(title__icontains=search_term)
+    def search_by_name(cls,search_term):
+        images = cls.objects.filter(name__icontains=search_term)
         return images
 
     def __str__(self):

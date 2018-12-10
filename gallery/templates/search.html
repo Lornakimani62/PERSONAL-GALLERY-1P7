@@ -20,8 +20,8 @@
             <div class="container">
 
                     <div class="row">
-                      {% if articles%}
-                        <h2>Found {{ articles|length }} of searched term {{message}}</h2>
+                      {% if images%}
+                        <h2>Found {{ images|length }} of searched term {{message}}</h2>
                       {% else %}
                         <h2> Found 0 articles for the search term</h2>
                       {% endif %}
@@ -30,10 +30,15 @@
 
                     <div class="row">
 
-                    {% if articles %}
-                      {% for article in articles %}
-                        <div class="col-sm-6 col-md-3">
-                            <h1>{{article.title}}</h1>
+                    {% if images %}
+                      {% for image in images %}
+                        <div class="col-sm-12 col-md-12">
+                            <h1>Name: </h1>
+                            <p>{{image.name}}</p>
+                            <h1>Description:</h1>
+                            <p>{{image.Description}}</p>
+                            <h1>Image:</h1>
+                            <p><a class="white-text"  href="/image/{{image.id}}"><img src="{{image.pic.url}}" style="width:500px;height:700px;"></a></p>
                         </div>
                       {% endfor %}
                     {% endif %}
