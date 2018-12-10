@@ -20,14 +20,12 @@
         {% include "navbar.html" %}
         {% for image in images %}
                 <!-- display images -->
+                <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 d-flex mb-3">
-                    <div class="card border-dark flex-fill">
-                        <div class="card-header">
                             <a class="white-text"  href="/image/{{image.id}}"><img src="{{image.pic.url}}"></a>
-                        </div>
-                            </div>
                             </div>
                         </div>
+                  
             {% endfor %}
     {%endblock%}
 
