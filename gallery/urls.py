@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns=[
     url(r'^$',views.home,name='home'),
-    url(r'^image/(\d+)', views.image, name='image'),
+    url(r'^image/(\d+)', views.image, name='display'),
     url(r'^search/$', views.search, name='search')
 ]
 if settings.DEBUG:
