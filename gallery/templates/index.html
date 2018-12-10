@@ -18,19 +18,16 @@
 <body>
     {% block content %}
         {% include "navbar.html" %}
-        {% for image in images %}
-                <!-- display images -->
-                <div class="container">
-                      <div class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 d-flex mb-3">
-                            <a class="white-text"  href="/image/{{image.id}}"><img src="{{image.pic.url}}" style="width:500px;height:700px;"></a>
-                        </div>
+        <!-- display images -->
+        <div class="container">
+                <div class="row">
+                    {% for image in images %}
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 mb-4">
+                        <a class="white-text"  href="/image/{{image.id}}"><img src="{{image.pic.url}}" class="img-fluid"></a>
                     </div>
-                    </div>
-
-
-
-            {% endfor %}
+                    {% endfor %}
+            </div>
+        </div>
     {%endblock%}
 
     {% block scripts %}
