@@ -18,29 +18,21 @@
 <body>
     {% block content %}
         {% include "navbar.html" %}
-
-
-        <div class="container black white-text">
                 <div class="container">
-
-                        <div class="row">
-                        <h1>Image:</h1>
-                        <img src="{{Image.pic.url}}"  class="img-responsive" alt="">
-                        </div>
-                        <div class="row">
-                        <h1>Name: </h1>
-                        <p>{{image.name}}</p>
-                        </div>
                     <div class="row">
-                        <h1>Description:</h1>
-                        <p>{{image.Description}}</p>
-                        <h4>Link to this Image:<span><input id="myInput" type="text" value="https://photo-gallery-wesh.herokuapp.com/image/{{image.id}}"><a href="#" class="btn" onclick="myFunction()">copy</a></span></h4>
-                    </div>
+                        <div class="col-sm-12 col-md-12">
+                            <h1>Image:</h1>
+                            <img src="{{image.pic.url}}"  class="img-responsive" alt="">
+                            <h1>Name: </h1>
+                            <p>{{image.name}}</p>
+                            <h1>Description:</h1>
+                            <p>{{image.Description}}</p>
+                            <h1>Category:</h1>
+                            <p>{{image.category}}</p>
+                            <h1>Location:</h1>
+                            <p>{{image.location}}</p>
                     </div>
                 </div>
-
-
-        </div>
         {% endblock %}
 
     {% block scripts %}

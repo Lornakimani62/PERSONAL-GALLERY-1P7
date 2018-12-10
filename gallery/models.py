@@ -71,8 +71,8 @@ class Image(models.Model):
 
     @classmethod
     def get_image_by_id(self,image):
-        images= Image.objects.get(id = id)
-        return images
+        image= Image.objects.get(id = id)
+        return image
 
     @classmethod
     def search_by_name(cls,search_term):

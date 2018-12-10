@@ -10,11 +10,11 @@ def home(request):
 def image(request,image_id):
 
     try:
-        pic = Image.objects.get(id = image_id)
+        image = Image.objects.get(id = image_id)
     except DoesNotExist:
         raise Http404()
 
-    return render(request,'details.html',{"pic": pic})
+    return render(request,'details.html',{"image": image})
 
 def search(request):
 
