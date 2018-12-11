@@ -21,9 +21,11 @@
 
                     <div class="row">
                       {% if images%}
-                        <h2>Found {{ images|length }} of searched term {{message}}</h2>
-                      {% else %}
-                        <h2> Found 0 articles for the search term</h2>
+                      <hr>
+                        <h2>Found {{ images|length }} six images in the  {{message}} category click on the image to view more details</h2>
+                      <hr>
+                        {% else %}
+                        <h2> oops! there are no images in this category </h2>
                       {% endif %}
 
                     </div>
@@ -32,12 +34,8 @@
 
                     {% if images %}
                       {% for image in images %}
-                        <div class="col-sm-12 col-md-12">
-                            <h1>Name: </h1>
-                            <p>{{image.name}}</p>
-                            <h1>Description:</h1>
-                            <p>{{image.Description}}</p>
-                            <h1>Image:</h1>
+                        <div class="col-sm-6 col-md-6">
+                            
                             <p><a class="white-text"  href="/image/{{image.id}}"><img src="{{image.pic.url}}" class="img-fluid"></a></p>
                         </div>
                       {% endfor %}
