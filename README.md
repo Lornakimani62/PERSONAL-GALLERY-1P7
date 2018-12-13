@@ -39,6 +39,8 @@ source virtual/bin/activate
  ```
  SECRET_KEY='<Secret_key>'
  DEBUG=True
+ Django-admin='Lorna'
+ Django-admin='Lk@0724276722'
 ```
 ## Check dependecies and store them in requirements.text
 
