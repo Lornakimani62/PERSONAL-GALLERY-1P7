@@ -30,3 +30,4 @@ def search(request):
         return render(request, 'search.html',{"message":message})
 
     return render(request,'search.html')
+
