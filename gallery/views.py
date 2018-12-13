@@ -33,7 +33,7 @@ def search(request):
 
 def location_filter(request, location):
     locations = Location.objects.all()
-    location = Location.get_location_id(locations)
+    location = Location.get_location_id(location)
     images = Image.filter_by_location(location)
     title = f'{location} Photos'
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})

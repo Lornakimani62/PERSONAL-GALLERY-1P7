@@ -24,9 +24,9 @@
                       Location
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="/location/1">Europe</a>
-                      <a class="dropdown-item" href="/location/2">Asia</a>
-                      <a class="dropdown-item" href="/location/3">Africa</a>
+                      <a class="dropdown-item" href="{% url 'location_filter' 2 %}">Europe</a>
+                      <a class="dropdown-item" href="{% url 'location_filter' 2 %}">Asia</a>
+                      <a class="dropdown-item" href="{% url 'location_filter' 4 %}">Africa</a>
                   </li>
           </ul>
           <form class="navbar-form" role="search" action="{% url 'search' %}">
